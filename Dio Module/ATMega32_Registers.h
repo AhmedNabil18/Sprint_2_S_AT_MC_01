@@ -53,6 +53,33 @@
 
 
 
+/*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*/
+/*-*-*-*-*-*-*-*-*-*-*-*- GPT REGISTERS -*-*-*-*-*-*-*-*-*-*-*-*/
+/*-* Timers Registers *-*/
+#define GPT_TIMSK_REG			(*((volatile uint8_t*)(0x59)))
+#define GPT_TIFR_REG			(*((volatile uint8_t*)(0x58)))
+
+/*-* Timer 0 8-bit Registers *-*/
+#define GPT_OCR0_REG			(*((volatile uint8_t*)(0x5C)))
+#define GPT_TCCR0_REG			(*((volatile uint8_t*)(0x53)))
+#define GPT_TCNT0_REG			(*((volatile uint8_t*)(0x52)))
+
+/*-* Timer 1 16-bit Registers *-*/
+#define GPT_TCCR1A_REG			(*((volatile uint8_t*)(0x4F)))
+#define GPT_TCCR1B_REG			(*((volatile uint8_t*)(0x4E)))
+#define GPT_TCNT1H_REG			(*((volatile uint8_t*)(0x4D)))
+#define GPT_TCNT1L_REG			(*((volatile uint8_t*)(0x4C)))
+#define GPT_OCR1AH_REG			(*((volatile uint8_t*)(0x4B)))
+#define GPT_OCR1AL_REG			(*((volatile uint8_t*)(0x4A)))
+#define GPT_OCR1BH_REG			(*((volatile uint8_t*)(0x49)))
+#define GPT_OCR1BL_REG			(*((volatile uint8_t*)(0x48)))
+#define GPT_ICR1H_REG			(*((volatile uint8_t*)(0x47)))
+#define GPT_ICR1L_REG			(*((volatile uint8_t*)(0x46)))
+
+/*-* Timer 2 8-bit Registers *-*/
+#define GPT_TCCR2_REG			(*((volatile uint8_t*)(0x45)))
+#define GPT_TCNT2_REG			(*((volatile uint8_t*)(0x44)))
+#define GPT_OCR2_REG			(*((volatile uint8_t*)(0x43)))
 
 
 #endif /* ATMEGA32_REGISTERS_H_ */
