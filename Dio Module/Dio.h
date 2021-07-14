@@ -60,7 +60,7 @@ typedef struct
 
 
 /* Extern PB structures to be used by Dio and other modules */
-extern const strDio_Config_t strDio_Pins[DIO_USED_PINS_NUM];
+extern strDio_Config_t strDio_pins[DIO_USED_PINS_NUM];
 
 /*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*/
 /*--*-*-*-*- FUNCTIONS PROTOTYPES -*-*-*-*-*-*/

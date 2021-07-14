@@ -8,7 +8,7 @@
 #include "Dio_Cfg.h"
 #include "Dio.h"
 
-const strDio_Config_t strDio_Pins[DIO_USED_PINS_NUM]=
+strDio_Config_t strDio_pins[DIO_USED_PINS_NUM]=
 {
 	{DioConf_LED_PORT_NUM, DioConf_LED_PIN_NUM, DIO_PIN_DIR_OUTPUT, PIN_LOW},
 	{DioConf_BUTTON_PORT_NUM, DioConf_BUTTON_PIN_NUM, DIO_PIN_DIR_INPUT, PIN_PDR}
