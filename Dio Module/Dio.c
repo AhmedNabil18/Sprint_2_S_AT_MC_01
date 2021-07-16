@@ -8,7 +8,7 @@
 /*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*/
 /*-*-*-*-*- INCLUDES *-*-*-*-*-*/
 #include "Dio.h"
-#include "ATMega32_Registers.h"
+#include "..\ATMega32_Registers.h"
 #include "Dio_Cfg.h"
 
 
@@ -106,21 +106,30 @@ enuDio_Status_t Dio_writePin(uint8_t u8_pinID, uint8_t u8_pinValue)
 	switch (pstrDio_pinsConfig[u8_pinID].u8_PortNum)
 	{
 		case PORT_A:
-		DIO_PORTA_DATA &= ~(1<<(pstrDio_pinsConfig[u8_pinID].u8_PinNum));
-		DIO_PORTA_DATA |= u8_pinValue<<(pstrDio_pinsConfig[u8_pinID].u8_PinNum);
+		if(u8_pinValue == PIN_HIGH)
+			DIO_PORTA_DATA |= 1<<(pstrDio_pinsConfig[u8_pinID].u8_PinNum);
+		else	
+			DIO_PORTA_DATA &= ~(1<<(pstrDio_pinsConfig[u8_pinID].u8_PinNum));
+		
 		break;
 		case PORT_B:
-		DIO_PORTB_DATA &= ~(1<<(pstrDio_pinsConfig[u8_pinID].u8_PinNum));
-		DIO_PORTB_DATA |= u8_pinValue<<(pstrDio_pinsConfig[u8_pinID].u8_PinNum);
-		break;
+			if(u8_pinValue == PIN_HIGH)
+				DIO_PORTB_DATA |= 1<<(pstrDio_pinsConfig[u8_pinID].u8_PinNum);
+			else
+				DIO_PORTB_DATA &= ~(1<<(pstrDio_pinsConfig[u8_pinID].u8_PinNum));
+			break;
 		case PORT_C:
-		DIO_PORTC_DATA &= ~(1<<(pstrDio_pinsConfig[u8_pinID].u8_PinNum));
-		DIO_PORTC_DATA |= u8_pinValue<<(pstrDio_pinsConfig[u8_pinID].u8_PinNum);
-		break;
+			if(u8_pinValue == PIN_HIGH)
+				DIO_PORTC_DATA |= 1<<(pstrDio_pinsConfig[u8_pinID].u8_PinNum);
+			else
+				DIO_PORTC_DATA &= ~(1<<(pstrDio_pinsConfig[u8_pinID].u8_PinNum));
+			break;
 		case PORT_D:
-		DIO_PORTD_DATA &= ~(1<<(pstrDio_pinsConfig[u8_pinID].u8_PinNum));
-		DIO_PORTD_DATA |= u8_pinValue<<(pstrDio_pinsConfig[u8_pinID].u8_PinNum);
-		break;
+			if(u8_pinValue == PIN_HIGH)
+				DIO_PORTD_DATA |= 1<<(pstrDio_pinsConfig[u8_pinID].u8_PinNum);
+			else
+				DIO_PORTD_DATA &= ~(1<<(pstrDio_pinsConfig[u8_pinID].u8_PinNum));
+			break;
 		default:
 		return DIO_STATUS_PORT_NUM_INVALID;
 	}
