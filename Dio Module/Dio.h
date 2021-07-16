@@ -12,7 +12,7 @@
 /*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*/
 /*-*-*-*-*- INCLUDES *-*-*-*-*-*/
 #include "Dio_Cfg.h"
-#include "Platform_Types.h"
+#include "..\Platform_Types.h"
 /*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*/
 /*-*-*-*-*- CONSTANTS -*-*-*-*-*-*/
 
@@ -59,9 +59,6 @@ typedef struct
 }strDio_Config_t;
 
 
-/* Extern PB structures to be used by Dio and other modules */
-extern strDio_Config_t strDio_pins[DIO_USED_PINS_NUM];
-
 /*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*/
 /*--*-*-*-*- FUNCTIONS PROTOTYPES -*-*-*-*-*-*/
 
@@ -81,5 +78,11 @@ enuDio_Status_t Dio_readPin(uint8_t u8_pinID, uint8_t *pu8_pinValue);
 enuDio_Status_t Dio_readPort(uint8_t u8_PortNum, uint8_t *pu8_portValue);
 enuDio_Status_t Dio_writePort(uint8_t u8_PortNum, uint8_t u8_portValue);
 *//***************/
+
+/*******************************************************************************
+ *                       External Variables                                    *
+ *******************************************************************************/
+/* Extern PB structures to be used by Dio and other modules */
+extern strDio_Config_t strDio_pins[DIO_USED_PINS_NUM];
 
 #endif /* DIO_H_ */

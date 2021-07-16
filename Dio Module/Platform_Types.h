@@ -12,6 +12,9 @@
 
 #ifndef PLATFORM_TYPES_H
 #define PLATFORM_TYPES_H
+
+#define SYS_CLOCK_FREQUENCY				1000000UL
+
 /*
  * CPU register type width
  */
