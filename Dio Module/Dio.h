@@ -32,6 +32,9 @@
 /*-*-*-*-*-*-*-*-*-*-*-*-*-*-*/
 /*-*-*-*-*- ENUMS -*-*-*-*-*-*/
 
+/*
+ * Data Type for DIO return status
+ */
 typedef enum{
 	DIO_STATUS_ERROR_NOK,
 	DIO_STATUS_ERROR_OK,
@@ -39,9 +42,13 @@ typedef enum{
 	DIO_STATUS_PIN_NUM_INVALID,
 	DIO_STATUS_PORT_NUM_INVALID,
 	DIO_STATUS_NULL_ARGUMENT,
-	DIO_STATUS_NOT_INIT
+	DIO_STATUS_NOT_INIT,
+	DIO_STATUS_ALREADY_INIT
 }enuDio_Status_t;
 
+/*
+ * Data Type for DIO Pin Direction
+ */
 typedef enum{
 	DIO_PIN_DIR_INPUT,
 	DIO_PIN_DIR_OUTPUT
@@ -49,7 +56,9 @@ typedef enum{
 
 /*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*/
 /*-*-*-*-*- STRUCTS -*-*-*-*-*-*/
-
+/*
+ * Data Type for DIO Pin Configurations
+ */
 typedef struct
 {
 	uint8_t u8_PortNum;
